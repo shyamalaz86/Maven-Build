@@ -17,4 +17,10 @@ jobs:
       - name: Test the code 
         run: mvn test
       - name: Build the code 
-        run: mvn package
+        run: mvn package 
+      - name: Get the artifact and upload on github repo
+        uses: actions/upload-artifact@v4
+        with:
+         name: java-example-artifact
+         path: /home/runner/work/MavenBuild-SL/MavenBuild-SL/target/java-example.war
+      # this is directory path on VM
